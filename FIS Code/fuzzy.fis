@@ -1,0 +1,60 @@
+[System]
+Name='fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Impressions'
+Range=[0 3500000]
+NumMFs=3
+MF1='low':'trimf',[78.3 81750 279000]
+MF2='medium':'trimf',[25600 772200 1443000]
+MF3='high':'trimf',[740000 2170000 3350000]
+
+[Input2]
+Name='Clicks'
+Range=[0 500]
+NumMFs=3
+MF1='low':'trimf',[-40.75 10.25 51]
+MF2='medium':'trimf',[43.2 90.18 163.9]
+MF3='high':'trimf',[137 221 464]
+
+[Input3]
+Name='Spent'
+Range=[0 600]
+NumMFs=3
+MF1='low':'trimf',[-19.42 14.91 71.58]
+MF2='medium':'trimf',[65.08 129.1 245.5]
+MF3='high':'trimf',[203.4 318.2 704]
+
+[Input4]
+Name='Total_Conversion'
+Range=[0 50]
+NumMFs=3
+MF1='low':'trimf',[-4.86 1.74 6.6]
+MF2='medium':'trimf',[6.3 10.78 20.9]
+MF3='high':'trimf',[18 27.6 66]
+
+[Output1]
+Name='output1'
+Range=[0 30]
+NumMFs=3
+MF1='low':'trimf',[-2.06 0.54 2.6]
+MF2='medium':'trimf',[2.1 3.97 7.7]
+MF3='high':'trimf',[5.6 11.1 27.3]
+
+[Rules]
+1 1 1 1, 1 (1) : 2
+3 3 3 3, 3 (1) : 1
+3 3 3 2, 2 (1) : 1
+3 3 3 3, 3 (1) : 1
+2 2 2 1, 1 (1) : 2
+2 2 2 2, 2 (1) : 1
